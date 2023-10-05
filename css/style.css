@@ -277,11 +277,14 @@ img {
 }
 
 .banner__content-left::after {
+    content: '';
     position: absolute;
-    content: url('../img/icons/shine2.svg');
-    width: 30px;
+    background-image: url('../img/icons/shine2Mobile.png');
+        width: 174px;
+        height: 174px;
+        background-size: cover;
     bottom: 0;
-    right: 166px;
+    right: 75px;
 }
 
 .banner__title {
@@ -460,7 +463,12 @@ img {
 }
 
 .about__content-right__bottom::after{
-    content: url('../img/icons/shine1.svg');
+    content: "";
+        background-image: url('../img/icons/shine1Mobile.png');
+        right: 75px;
+        width: 75px;
+        height: 75px;
+        background-size: cover;
     position: absolute;
     right: 0;
     top: -33px;
@@ -597,10 +605,15 @@ line-height: normal;
     }
 
     .banner__content-img {
-        height: 85vh;
+        height: 100vh;
     }
     .banner__content-left::after{
-        content: url('../img/icons/shine2Mobile.svg');
+        content: '';
+        background-image: url('../img/icons/shine2Mobile.png');
+        right: -40px;
+        width: 75px;
+        height: 74px;
+        background-size: cover;
         bottom: -37px;
         right: 54px;
     }
@@ -683,6 +696,17 @@ line-height: normal;
         display: flex;
         justify-self: center;
     }
+    .about__list-item::before {
+        content: "";
+        background-image: url('../img/icons/crown.png');
+        right: -40px;
+        width: 40px;
+        height: 38px;
+        background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 }
 
 
