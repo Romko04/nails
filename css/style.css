@@ -648,7 +648,12 @@ line-height: normal;
         width: 100%;
     }
     .title__shine::after{
-        content: url('../img/icons/shine1mobile.svg');
+        content: "";
+    background-image: url('../img/icons/shine1Mobile.png');
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
         right: -33px;
         transition: all ease-in .5s;
     }
