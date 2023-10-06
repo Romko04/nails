@@ -517,7 +517,6 @@ img {
     padding-right: 0;
     padding-top: 100px;
     display: flex;
-    margin-bottom: 200px;
 }
 .who__title {
     display: inline-block;
@@ -565,6 +564,131 @@ line-height: normal;
     text-align: right;
 }
 
+
+
+
+
+
+/*moduls*/
+
+.moduls__container {
+    padding-top: 100px;
+}
+.title {
+
+}
+.moduls__title {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}
+/*MODULS*/
+.accordeon {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    background: #FFF;
+    background-image: linear-gradient(to right, black, black 50%, red 92%, red);
+    margin-bottom: 37px;
+    padding: 3px;
+    cursor: pointer;
+  }
+  
+
+.moduls__title {
+    margin: 75px 0;
+
+}
+
+.moduls__accordeon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 37px;
+    border-radius: 40px;
+    transition: all 0.4s ease;
+
+}
+
+.panel {
+    overflow: hidden;
+    max-height: 0;
+    visibility: hidden;
+    /* opacity: 0; */
+    /* Початкова висота */
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    background: #FFF;
+    transition: all 0.8s ease;
+}
+
+.panelActive {
+    visibility: visible;
+    opacity: 1;
+    max-height: 1000px;
+}
+
+/* Решта стилів без змін */
+
+/* Style the buttons that are used to open and close the accordion panel */
+.moduls__accordeon-btn {
+    width: 100%;
+    border-radius: 8px;
+    color: #505050;
+    text-align: center;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    word-wrap: normal;
+    line-height: normal;
+    text-transform: uppercase;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: transparent;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 3s ease;
+}
+.moduls__accordeon-btn b, .moduls__accordeon-btn strong{
+    color: #F00;
+}
+
+.moduls__accordeon-btn::after {
+    position: absolute;
+    content: url('../img/icons/arrow.svg');
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moduls__accordeon-btn.active{
+    border-radius: 8px 8px 0 0;
+    transition: all .1s ease;
+}
+.moduls__accordeon-btn.active::after {
+    transform: rotate(180deg);
+}
+
+
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
+    background-color: #ccc;
+}
+
+
 /*FOOTER*/
 
 @media (max-width: 965px) {
@@ -605,7 +729,7 @@ line-height: normal;
     }
 
     .banner__content-img {
-        height: 100vh;
+        height: 750px;
     }
     .banner__content-left::after{
         content: '';
@@ -615,7 +739,7 @@ line-height: normal;
         height: 74px;
         background-size: cover;
         bottom: -37px;
-        right: 54px;
+        right: 0;
     }
     .banner__programs-title b::after {
         content: "";

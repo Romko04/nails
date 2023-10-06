@@ -212,3 +212,28 @@
 // setTimeout(function () {
 //     countdown.style.display = 'flex';
 // }, 1000);
+
+const acc = document?.querySelectorAll('.accordeon');
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+  acc[i].querySelector('.moduls__accordeon-btn').classList.toggle("active")
+  acc[i].querySelector('.panel').classList.toggle("panelActive")
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.banner__btn');
+  const target = document.querySelector('#price');
+
+  btn.addEventListener('click', event => {
+    event.preventDefault();
+
+    if (target) {
+      const targetOffset = target.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
