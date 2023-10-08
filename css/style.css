@@ -635,9 +635,12 @@ img {
     background-image: linear-gradient(45deg, #fff, #fff), linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(255, 0, 0, 1));
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    margin-bottom: 37px;
+    margin-bottom: 20px;
     padding: 3px;
     cursor: pointer;
+}
+.accordeon:last-child{
+    margin-bottom: 0;
 }
 
 
@@ -667,6 +670,27 @@ img {
     transition: all 0.8s ease;
 }
 
+.modul__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+.modul__list-item {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+}
+.modul__list-item__lesson {
+color: #FF0000;
+background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
+}
+/* .modul__list-item__value {
+} */
 .panelActive {
     visibility: visible;
     opacity: 1;
@@ -688,7 +712,6 @@ img {
     line-height: normal;
     text-transform: uppercase;
     background-color: #fff;
-    display: flex;
     align-items: center;
     gap: 10px;
     border: transparent;
@@ -696,6 +719,7 @@ img {
     padding: 10px;
     cursor: pointer;
     transition: all 3s ease;
+    text-align: left;
 }
 .moduls__accordeon-btn span{
     white-space: nowrap;
@@ -706,26 +730,25 @@ img {
     color: #F00;
 }
 
-.moduls__accordeon-btn::after {
-    position: absolute;
-    content: url('../img/icons/arrow.svg');
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all .8s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .moduls__accordeon-btn.active {
     border-radius: 8px 8px 0 0;
     transition: all .1s ease;
 }
 
-.moduls__accordeon-btn.active::after {
-    transform: rotate(180deg);
+.moduls__accordeon-btn::after {
+    position: absolute;
+    content: url('../img/icons/arrow.svg');
+    right: 15px;
+    transition: all .8s ease;
+    top: 10px;
+    transform-origin: center; /* Додано точку обертання по центру */
 }
+
+.moduls__accordeon-btn.active::after {
+    transform: rotate(180deg); /* Змінено обертання для активного стану */
+}
+
 
 
 
@@ -860,8 +883,7 @@ img {
     content: url('../img/icons/instagramCases.svg');
     position: absolute;
     left: 0;
-    top: 64%;
-    transform: translateY(-50%);
+    top: 5px;
 }
 
 .swiper__content-text {
@@ -1092,9 +1114,31 @@ img {
     line-height: normal;
     position: relative;
 }
+.price__value-full{
+    color: #F00;
+font-family: Montserrat;
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: -0.625px;
+margin: 0 auto;
+position: relative;
+padding: 0 5px;
+}
+.price__value-full::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 2px;
+    background-color: #000;
+}
 .price__list-item__title-value::after{
     content: url('../img/icons/priceIconSvg.svg');
-    right: 0px;
+    right: -26px;
     top: 21px;
     position: absolute;
 
@@ -1124,8 +1168,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .price__list-additional__item {
@@ -1175,14 +1218,16 @@ img {
     font-weight: 600;
     line-height: normal;
     margin-top: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     text-align: center;
+    position: relative;
 }
 
 .price__buttons {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 25px;
 }
 
 .price__button {
@@ -1253,7 +1298,7 @@ img {
         width: 75px;
         height: 74px;
         background-size: cover;
-        bottom: -37px;
+        bottom: -65px;
         right: 44px;
     }
 
