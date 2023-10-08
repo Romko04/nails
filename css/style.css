@@ -1461,6 +1461,39 @@ padding: 0 5px;
         font-size: 18px;
         padding-right: 55px;
     }
+    .swiper__content-location::before{
+        content: "";
+        background-image: url('../img/icons/locationPNG.png');
+        /* right: -40px; */
+        width: 15px;
+        height: 18px;
+        background-size: cover;
+        /* right: -33px; */
+    }
+    .swiper__content-instagram::before{
+        content: "";
+        background-image: url('../img/icons/instagramCasesPNG.png');
+        /* right: -40px; */
+        width: 17px;
+    height: 17px;
+        background-size: cover;
+    }
+    .price__list-item__title-value::after{
+        content: "";
+        background-image: url('../img/icons/priceIcon.png');
+        /* right: -40px; */
+        width: 75px;
+    height: 80px;
+        background-size: cover;
+    }
+    .title--shine__two::after{
+        content: "";
+        background-image: url('../img/icons/priceIcon.png');
+        /* right: -40px; */
+        width: 75px;
+    height: 80px;
+        background-size: cover;
+    }
 }
 @media (max-width: 400px) {
     .header__container{
