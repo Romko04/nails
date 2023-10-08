@@ -16,26 +16,26 @@
 //   }
 // });
 
-// new Swiper('.swiper', {
-//   slidesPerView: 1,
-//   spaceBetween: 35,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: 'true'
-//   },
-//   breakpoints: {
-//     700: {
-//       slidesPerView: 2
-//     },
-//     900: {
-//       slidesPerView: 3
-//     }
-//   }
-// });
+new Swiper('.swiper', {
+  slidesPerView: 1,
+  spaceBetween: 35,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: 'true'
+  },
+  breakpoints: {
+    700: {
+      slidesPerView: 2
+    },
+    900: {
+      slidesPerView: 3
+    }
+  }
+});
 
 // document.addEventListener('click', (e) => {
 //   if (e.target.classList.contains('anchor')) {
@@ -159,60 +159,6 @@
 // }
 
 
-// /*Безкінечний таймер */
-// // Определяем действующие элементы на странице
-// const year = document.querySelector('#year');
-// const days = document.querySelector('#days');
-// const hours = document.querySelector('#hours');
-// const minutes = document.querySelector('#minutes');
-// const seconds = document.querySelector('#seconds');
-// const countdown = document.querySelector('#countdown');
-// const preloader = document.querySelector('#preloader');
-
-
-// function updateCounter() {
-//   const startDate = new Date('2023-09-03');
-//   const currentDate = new Date()
-//   const currentHour = currentDate.getHours();
-//   const currentMinute = currentDate.getMinutes();
-//   const currentSecond = currentDate.getSeconds();
-
-//   const dateDiffInSeconds = currentDate - startDate // від 1 дати віднімає теперішню
-
-//   const daysDiff = Math.abs(Math.floor(dateDiffInSeconds / (1000 * 60 * 60 * 24))); // вираховуєм різницю в днях
-
-//   const dayOfCycle = Math.floor(daysDiff / 3); // дивимся який період циклу
-
-//   const daysInCycleDiff = daysDiff - (dayOfCycle * 3) // вираховуєм який день циклу
-//   /* значення дня цикла*/
-//   const daysInMilliseconds = daysInCycleDiff * 24 * 60 * 60 * 1000;
-//   const hoursInMilliseconds = currentHour * 60 * 60 * 1000;
-//   const minutesInMilliseconds = currentMinute * 60 * 1000;
-//   const secondsInMilliseconds = currentSecond * 1000;
-
-//   const totalMilliseconds = daysInMilliseconds + hoursInMilliseconds + minutesInMilliseconds + secondsInMilliseconds; // день циклу в мілісекундах
-
-
-//   const diffInMilliseconds = 259200000 - totalMilliseconds;// получаєм скільки лишилось до кінця циклу
-
-//   const diffInDays = Math.floor(diffInMilliseconds / (24 * 60 * 60 * 1000));
-//   const diffInHours = Math.floor((diffInMilliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-//   const diffInMinutes = Math.floor((diffInMilliseconds % (60 * 60 * 1000)) / (60 * 1000));
-//   const diffInSeconds = Math.floor((diffInMilliseconds % (60 * 1000)) / 1000);
-  
-//   days.innerText = '0'+ diffInDays
-//   hours.innerText = diffInHours < 10 ? '0' + diffInHours : diffInHours
-//   minutes.innerText = diffInMinutes < 10 ? '0' + diffInMinutes : diffInMinutes
-//   seconds.innerText = diffInSeconds < 10 ? '0' + diffInSeconds : diffInSeconds
-// }
-
-// // // Запускаем расчет 1 раз в секунду (каждую секунду)
-// setInterval(updateCounter, 1000);
-
-// setTimeout(function () {
-//     countdown.style.display = 'flex';
-// }, 1000);
-
 const acc = document?.querySelectorAll('.accordeon');
 for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
@@ -220,20 +166,32 @@ for (let i = 0; i < acc.length; i++) {
   acc[i].querySelector('.panel').classList.toggle("panelActive")
   });
 }
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('.banner__btn');
-  const target = document.querySelector('#price');
 
-  btn.addEventListener('click', event => {
-    event.preventDefault();
 
-    if (target) {
-      const targetOffset = target.getBoundingClientRect().top + window.pageYOffset;
 
-      window.scrollTo({
-        top: targetOffset,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+
+/*Плавний скрол */
+const anchors = document.querySelectorAll('.nav__link')
+const anchorsAdditional = document.querySelectorAll('.anchor--additional')
+
+const loop = (archive) => {
+  for (const anchor of archive) {
+    anchor.addEventListener('click', (e)=>{
+      e.preventDefault()
+      const blockId = anchor.getAttribute('href')
+      scrollToAnchor(blockId)
+    })
+  }
+}
+
+
+
+const scrollToAnchor = (blockId) => {
+  document.querySelector('' + blockId).scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  })
+}
+
+loop(anchors)
+loop(anchorsAdditional)
