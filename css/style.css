@@ -942,9 +942,6 @@ img {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-.modal.fadeOut {
-    animation: fadeOut 0.5s ease-in-out;
-}
 
 @keyframes fadeIn {
     from {

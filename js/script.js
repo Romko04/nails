@@ -9,12 +9,12 @@ const modal = document?.querySelector('.modal');
 const btn = document?.querySelector('.closeModalBtn');
 
 let isModalOpen = false
-
-window.addEventListener('click', (event) => {
-  if (isModalOpen && event.target.classList.contains('modal') | event.target.classList.contains('close')) {
+document.addEventListener('click', (event) => {
+  if (isModalOpen && (event.target.classList.contains('modal') || event.target.classList.contains('close'))) {
     closeModal()
   }
 });
+
 
 new Swiper('.swiper', {
   slidesPerView: 1,
@@ -64,6 +64,8 @@ images.forEach(image => {
 
 
 const openModal = (item) => {
+  debugger
+  console.log('dffdds');
   const name = item.querySelector('.swiper__content-name').textContent
   const text = item.querySelector('.swiper__content-text').textContent
   const textLocation = item.querySelector('.swiper__content-location').textContent
@@ -100,6 +102,7 @@ const openModal = (item) => {
 }
 
 const closeModal = () => {
+  debugger
   modal.style.display = 'none';
   modal.classList.remove('fadeIn'); // Додаємо клас анімації
   document.body.classList.remove('body-block');
