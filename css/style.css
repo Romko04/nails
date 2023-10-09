@@ -831,8 +831,13 @@ background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
 }
 
 .swiper__content-img {
+    width: 120px;
     height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
+
 
 .swiper__content-top_text {
     display: flex;
@@ -1040,7 +1045,6 @@ background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
     font-weight: 600;
     line-height: 154.35%;
     /* 15.435px */
-    text-transform: uppercase;
     margin-top: 20px;
 
 }
@@ -1169,6 +1173,7 @@ padding: 0 5px;
     flex-direction: column;
     gap: 5px;
     margin-top: 50px;
+    margin-bottom: auto;
 }
 
 .price__list-additional__item {
@@ -1476,6 +1481,7 @@ padding: 0 5px;
         /* right: -40px; */
         width: 17px;
     height: 17px;
+        top: 0;
         background-size: cover;
     }
     .price__list-item__title-value::after{
@@ -1493,6 +1499,16 @@ padding: 0 5px;
         width: 75px;
     height: 80px;
         background-size: cover;
+    }
+    .swiper__content-instagram{
+        margin-top: 7px;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+        height: 17px;
+        width: 16px;
+    }
+    .swiper-android .swiper-slide, .swiper-ios .swiper-slide, .swiper-wrapper{
+        padding-bottom: 50px;
     }
 }
 @media (max-width: 400px) {
