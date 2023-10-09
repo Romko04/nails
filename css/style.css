@@ -670,13 +670,13 @@ img {
     transition: all 0.8s ease;
 }
 
-.modul__list {
+.panel__content-top ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 10px;
 }
-.modul__list-item {
+.panel__content-top ul li span {
     color: rgb(0, 0, 0);
     font-family: Montserrat;
     font-size: 20px;
@@ -685,9 +685,13 @@ img {
     line-height: normal;
     position: relative;
 }
-.modul__list-item__lesson {
-color: #FF0000;
-background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
+.panel__content-top ul li b{
+    color: #FF0000;
+    background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
+}
+.panel__content-top ul li span.modul__list-item__lesson {
+    color: #FF0000;
+    background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
 }
 /* .modul__list-item__value {
 } */
@@ -893,7 +897,7 @@ background-color: rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(255, 1, 1, 1);
 
 .swiper__content-text {
     padding-left: 67px;
-    color: #6B2121;
+    color: #000;
     font-family: Montserrat;
     font-size: 15px;
     font-style: normal;
