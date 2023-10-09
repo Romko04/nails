@@ -1539,6 +1539,9 @@ margin: 50px auto;
     .swiper-android .swiper-slide, .swiper-ios .swiper-slide, .swiper-wrapper{
         padding-bottom: 50px;
     }
+    .confidenc__title{
+        font-size: 27px;
+    }
 }
 @media (max-width: 400px) {
     .header__container{
